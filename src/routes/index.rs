@@ -6,6 +6,7 @@ use askama::Template;
 struct IndexTemplate<'a> {
     title: &'a str,
 }
+
 pub async fn index() -> impl Responder {
     let template = IndexTemplate {
         title: "Hello world!",
