@@ -1,5 +1,15 @@
 use actix_web::{HttpResponse, Responder};
+use askama::Template;
 
+#[derive(Template)]
+#[template(path = "index.html")]
+struct IndexTemplate<'a> {
+    title: &'a str,
+}
 pub async fn index() -> impl Responder {
-    HttpResponse::Ok().body("<h1>Hello world!<h1>")
+    let template = IndexTemplate {
+        title: "Hello world!",
+    };
+
+    HttpResponse::Ok().body(template.render().unwrap())
 }
