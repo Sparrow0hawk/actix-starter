@@ -2,3 +2,6 @@
 
 # rustrover
 .idea/
+
+# selenium
+drivers/geckodriver

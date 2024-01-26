@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install geckodriver and start
+        run: |
+          sudo apt-get update
+          sudo apt-get install firefox-geckodriver
+          geckodriver &
       - name: Install toolchain
         uses: dtolnay/rust-toolchain@stable
       - name: Run cargo check
