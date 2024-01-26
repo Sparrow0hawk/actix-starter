@@ -1,2 +1,2 @@
-mod integration;
 mod fixtures;
+mod integration;
