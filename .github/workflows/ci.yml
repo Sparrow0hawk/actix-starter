@@ -18,7 +18,7 @@ jobs:
       - name: Install geckodriver and start
         run: |
           sudo apt-get update
-          sudo apt-get install firefox-geckodriver
+          sudo apt-get install firefox
           geckodriver &
       - name: Install toolchain
         uses: dtolnay/rust-toolchain@stable
